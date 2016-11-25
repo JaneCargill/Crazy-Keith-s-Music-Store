@@ -27,7 +27,8 @@ class Album
   def find_artist()
     sql = "SELECT * FROM artists WHERE id = #{@artist_id}"
     artists = SqlRunner.run(sql)
-    return artists.map {|hash| Album.new(hash)}
+    result = artists.map {|hash| Album.new(hash)}
+    return result[0]
   end
 
   def self.all()
