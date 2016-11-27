@@ -1,11 +1,25 @@
-<h1>Crazy Keiths Music Store!</h1>
+<h1 style="color:red; font-family:Arial">Crazy Keiths Music Store!</h1>
 
-<% for album in @albums %>
- <p>Album Name: <%= album.name() %></p>
- <p>Stock: <%= album.stock_level() %></p> 
- <p>Artist: <%= album.find_artist.name() %></p>
- <!-- <p><a href="/albums/<%=album.id %>">Show</a></p> -->
- <hr>
- <% end %>
+<table border="1px">
+  <tr>
+    <th style="font-family:Arial">Album Name</th>
+
+    <th style="font-family:Arial">Artist</th>
+    
+    <th style="font-family:Arial">Stock Level</th>
+    
+  </tr>
+  <% for album in @albums %>
+  <tr>
+    <td><%= album.name() %></td>
+
+    <td><a href="/stock_level/artist/:id"><%= album.find_artist.name() %></a></td>
+    
+    <td><%= album.stock_level() %></td>
+    
+    <!-- <p><a href="/albums/<%=album.id %>">Show</a></p> -->
+  </tr>
+  <% end %>
+</table>
 
 
