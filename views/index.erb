@@ -13,7 +13,7 @@
   <tr>
     <td><%= album.name() %></td>
 
-    <td><a href="/stock_level/artist"><%= album.find_artist.name() %></a></td>
+    <td><a href="/artists/<%= album.artist_id %>"> <%= album.find_artist.name() %></a></td>
     
     <td><%= album.stock_level() %></td>
     

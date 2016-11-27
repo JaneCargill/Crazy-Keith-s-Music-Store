@@ -6,7 +6,7 @@ class Artist
 
   def initialize(options)
     @name = options['name']
-    @id = options['id'].to_i if options['id']
+    @id = nil || options['id'].to_i
   end
 
   def save()
