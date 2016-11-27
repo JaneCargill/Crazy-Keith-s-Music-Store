@@ -4,13 +4,19 @@
   <tr>
     <th>Name</th>
     <th></th>
-    <th>Speed</th>
+    <th>quantity</th>
+    <th></th>
+    <th>stock level</th>
   </tr>
   <% for album in @albums %>
   <tr>
     <td><%= album.name %></td>
     <td>|</td>
     <td><%= album.quantity %></td>
+    <td>|</td>
+    <td><%= album.stock_level %></td>
+    <td>|</td>
+    <td><%= album.find_artist.name %></td>
   </tr>
   <% end %>
 </table>

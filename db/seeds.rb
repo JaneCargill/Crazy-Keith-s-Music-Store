@@ -75,6 +75,9 @@ album1.stock_level()
 album4.stock_level()
 album5.stock_level()
 
+artist1.find_album
+
+Artist.find(artist1.id)
 
 albums = Album.all()
 artists = Artist.all()

@@ -11,12 +11,14 @@ get '/stock_level' do
   erb(:index)
 end
 
-get '/stock_level/album/:id' do
-  @album = Album.find(options[:id])
-erb(:show)
+get '/stock_level/albums' do
+  @albums = Album.all()
+erb(:"Albums/show")
 end
 
-get '/stock_level/artist/:id' do
-  @artist = Artist.find(params[:id])
-erb(:show)
+
+
+get '/stock_level/artist' do
+  @artists = Artist.all()
+erb(:"Artists/show")
 end

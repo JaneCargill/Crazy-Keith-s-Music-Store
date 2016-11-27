@@ -1,10 +1,16 @@
-<h1> artist</h1>
+<h1>Artists</h1>
 
-
-<p><%=@artist.find_album()%></p>
-
-
-
-    
-    
- 
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>album</th>
+  </tr>
+  <% for artist in @artists %>
+  <tr>
+    <td><%= artist.name %></td>
+    <td>|</td>
+    <td><%= artist.find_album %></td>
+  </tr>
+  <% end %>
+</table>
