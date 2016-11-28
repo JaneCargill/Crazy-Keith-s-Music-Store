@@ -1,9 +1,14 @@
 <h1>Artists</h1>
 
+<p><a href="/artists/new">New Artist</a></p>
 
-  <% for artist in @artists %>
-  
-    <p><a href="/artists/<%=artist.id%>"><%= artist.name %></a></p>
 
-   <% end %>
- 
+<% for artist in @artists %>
+
+<p><a href="/artists/<%=artist.id%>"><%= artist.name %></a></p>
+
+<% end %>
+
+
+
+

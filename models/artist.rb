@@ -10,7 +10,7 @@ class Artist
   end
 
   def save()
-    sql = "INSERT INTO artists (name) VALUES ('#{name}') returning *;"
+    sql = "INSERT INTO artists (name) VALUES ('#{@name}') returning *;"
     results = SqlRunner.run(sql)
     @id = results[0]['id'].to_i
   end
@@ -19,14 +19,11 @@ class Artist
     sql = "SELECT * FROM albums WHERE artist_id = #{@id}"
     albums = SqlRunner.run(sql)
     results = albums.map {|hash| Album.new(hash)}
-    # binding.pry
     return results
-    
-
   end
 
 def self.find(id)
-  sql="SELECT * FROM artists WHERE id = #{id}"
+  sql = "SELECT * FROM artists WHERE id = #{id}"
   artist = SqlRunner.run(sql)
   return Artist.new(artist.first)
 end
