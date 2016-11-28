@@ -19,7 +19,10 @@ class Artist
     sql = "SELECT * FROM albums WHERE artist_id = #{@id}"
     albums = SqlRunner.run(sql)
     results = albums.map {|hash| Album.new(hash)}
-    return results[0].name
+    # binding.pry
+    return results
+    
+
   end
 
 def self.find(id)

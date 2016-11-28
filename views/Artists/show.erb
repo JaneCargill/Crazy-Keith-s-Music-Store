@@ -7,11 +7,14 @@
     <th>album</th>
   </tr>
 
+  <% albums = @artist.find_album %>
+  <% for album in albums %>
   <tr>
     <td><%= @artist.name %></td>
     <td>|</td>
-    <td><%= @artist.find_album %></td>
+    <td><%= album.name %></td>
   </tr>
+  <% end %>
 
 </table>
 

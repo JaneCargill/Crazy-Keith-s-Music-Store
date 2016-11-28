@@ -3,7 +3,7 @@
 
   <% for artist in @artists %>
   
-    <p><%= artist.name %></p>
+    <p><a href="/artists/<%=artist.id%>"><%= artist.name %></a></p>
 
    <% end %>
  
