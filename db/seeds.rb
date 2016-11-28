@@ -71,6 +71,9 @@ album6 = Album.new({
 
 album6.save
 
+album6.quantity = 20
+album6.update
+
 album1.stock_level()
 album4.stock_level()
 album5.stock_level()

@@ -18,3 +18,14 @@ post '/albums' do
   album.save
   redirect ('/albums')
 end
+
+get '/albums/:id/edit' do
+  @album = Album.find(params[:id])
+  @artists = Artist.all()
+  erb(:"Albums/edit")
+end
+
+post '/albums/:id' do
+  @album = Album.update(params)
+  redirect ('/albums/show')
+end

@@ -18,10 +18,17 @@ class Album
     @id = results[0]['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE albums SET (name, quantity) = ('#{@name}', #{@quantity}) WHERE id = #{@id};"
+    results = SqlRunner.run(sql)
+
+  end
+
   def stock_level()
-    return "high"if @quantity > 10
-    return "medium" if @quantity >5
-    return "low"
+    return "high" if @quantity > 10
+    return "medium" if @quantity > 5
+    return "low" if @quantity > 0
+    return "out of stock" if @quantity == 0
   end
 
   def find_artist()
@@ -32,9 +39,9 @@ class Album
   end
 
   def self.find(id)
-    sql="SELECT* FROM albums WHERE id = #{@id}"
-    albums = SqlRunner.run(sql)
-    return albums.map {|hash| Album.new(hash)}
+    sql="SELECT* FROM albums WHERE id = #{id}"
+    data = SqlRunner.run(sql).first
+    return Album.new(data)
   end
 
   def self.all()

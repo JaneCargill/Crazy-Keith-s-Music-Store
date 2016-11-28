@@ -1,0 +1,26 @@
+<h1> Amend Stock </h1>
+
+<form action="/albums" method="post">
+<label>
+  Select Artist:
+  <select name="artist_id">
+    <%for artist in @artists%>
+    <option value="<%=artist.id%>"<%= "selected" if artist.id == @album.artist_id %> >
+    <%=artist.name%>
+    </option>
+    <%end%>
+  </select>
+</label>
+
+<label>
+  Enter Album:
+  <input type="text" name="name" value="<%= @album.name() %>">
+</label>
+
+<label>
+Number of Albums:
+  <input type="integer" name="quantity" value ="<%= @album.quantity() %>">
+</label>
+
+<input type='submit' value="update">
+</form>

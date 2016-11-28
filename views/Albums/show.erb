@@ -17,8 +17,11 @@
     <td><%= album.stock_level %></td>
     <td>|</td>
     <td><%= album.find_artist.name %></td>
+    <td>|</td>
+    <td><a href="/albums/<%=album.id%>/edit">Edit Album</a></td>
   </tr>
   <% end %>
 </table>
 
 <p><a href="/albums/new">New Album</a></p>
+
