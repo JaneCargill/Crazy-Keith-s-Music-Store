@@ -1,6 +1,6 @@
 <h1> Amend Stock </h1>
 
-<form action="/albums" method="post">
+<form action="/albums/<%= @album.id %>" method="post">
 <label>
   Select Artist:
   <select name="artist_id">
@@ -19,7 +19,7 @@
 
 <label>
 Number of Albums:
-  <input type="integer" name="quantity" value ="<%= @album.quantity() %>">
+  <input type="integer" name="quantity" value ="<%= @album.quantity %>">
 </label>
 
 <input type='submit' value="update">

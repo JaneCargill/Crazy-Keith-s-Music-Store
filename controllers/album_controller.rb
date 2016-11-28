@@ -27,5 +27,5 @@ end
 
 post '/albums/:id' do
   @album = Album.update(params)
-  redirect ('/albums/show')
+  redirect ('/albums')
 end

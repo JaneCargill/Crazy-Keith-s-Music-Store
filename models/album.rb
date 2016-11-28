@@ -18,8 +18,8 @@ class Album
     @id = results[0]['id'].to_i
   end
 
-  def update()
-    sql = "UPDATE albums SET (name, quantity) = ('#{@name}', #{@quantity}) WHERE id = #{@id};"
+  def self.update(options)
+    sql = "UPDATE albums SET name = '#{options['name']}', quantity= '#{options['quantity']}' WHERE id ='#{ options['id'] }';"
     results = SqlRunner.run(sql)
 
   end
