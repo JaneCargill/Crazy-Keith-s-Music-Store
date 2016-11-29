@@ -6,6 +6,7 @@ require_relative('../models/price')
 
 get '/albums' do
   @albums = Album.all()
+
 erb(:"Albums/index")
 end
 
@@ -35,14 +36,15 @@ end
 post '/albums/:id/buy' do
   album = Album.find(params[:id].to_i)
   album.buy_album(params[:quantity].to_i)
-  Album.update({"quantity" => album.quantity, "name" => album.name, "id" => album.id})
+  Album.update({"quantity" => album.quantity, "name" => album.name, "id" => album.id, "profit" => album.profit})
   redirect ('/albums')
 end
 
 post '/albums/:id/sell' do
   album = Album.find(params[:id].to_i)
   album.sell_album(params[:quantity].to_i)
-  Album.update({"quantity" => album.quantity, "name" => album.name, "id" => album.id})
+  Album.update({"quantity" => album.quantity, "name" => album.name, "id" => album.id, "profit" => album.profit})
+  # @profit = album.profit(params[:quantity].to_i)
   redirect ('/albums')
 end
 

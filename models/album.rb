@@ -1,8 +1,9 @@
 require_relative('../db/sql_runner')
+require_relative('price')
 
 class Album
 
-  attr_accessor :name, :quantity, :artist_id, :price_id
+  attr_accessor :name, :quantity, :artist_id, :price_id, :profit
   attr_reader :id 
 
   def initialize(options)
@@ -11,6 +12,7 @@ class Album
     @id = options['id'].to_i
     @artist_id = options['artist_id'].to_i
     @price_id = options['price_id'].to_i
+    @profit = nil || options['profit'].to_i
   end
 
   def save()
@@ -20,7 +22,7 @@ class Album
   end
 
   def self.update(options)
-    sql = "UPDATE albums SET name = '#{options['name']}', quantity= '#{options['quantity']}' WHERE id ='#{ options['id'] }';"
+    sql = "UPDATE albums SET name = '#{options['name']}', quantity= '#{options['quantity']}', profit= '#{options['profit']}' WHERE id ='#{ options['id'] }';"
     results = SqlRunner.run(sql)
 
   end
@@ -48,10 +50,13 @@ class Album
 
   def buy_album(number)
     @quantity = @quantity += number
+    @profit -= (number * find_prices.price_buy())
   end
 
   def sell_album(number)
+
     @quantity = @quantity -= number
+    @profit += (number * find_prices.price_sell())
   end
 
   def self.find(id)

@@ -118,6 +118,7 @@ artist1.find_album
 
 album1.find_prices()
 album4.find_prices()
+album3.profit()
 
 Artist.find(artist1.id)
 Album.find(album1.id)

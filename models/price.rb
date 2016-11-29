@@ -16,7 +16,13 @@ attr_reader :id
   end
 
   def markup()
-    profit = @price_sell - @price_buy
+    markup = @price_sell - @price_buy
+  end
+
+  def self.find(id)
+    sql="SELECT * FROM prices WHERE id = #{id};"
+    data = SqlRunner.run(sql).first
+    return Price.new(data)
   end
 
   def self.all()

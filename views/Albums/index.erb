@@ -7,6 +7,10 @@
     <th>quantity</th>
     <th></th>
     <th>stock level</th>
+    <th></th>
+    <th>Artist</th>
+    <th></th>
+    <th>Profit</th>
   </tr>
   <% for album in @albums %>
   <tr>
@@ -17,6 +21,8 @@
     <td><%= album.stock_level %></td>
     <td>|</td>
     <td><%= album.find_artist.name %></td>
+    <td>|</td>
+    <td><%= album.profit %></td>
     <td>|</td>
   </tr>
   <% end %>
