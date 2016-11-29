@@ -46,6 +46,14 @@ class Album
     return result[0]
   end
 
+  def buy_album(number)
+    @quantity = @quantity += number
+  end
+
+  def sell_album(number)
+    @quantity = @quantity -= number
+  end
+
   def self.find(id)
     sql="SELECT* FROM albums WHERE id = #{id};"
     data = SqlRunner.run(sql).first

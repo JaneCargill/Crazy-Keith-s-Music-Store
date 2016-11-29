@@ -105,6 +105,9 @@ album6.save
 
 album6.quantity = 20
 
+album1.buy_album(10)
+album4.sell_album(3)
+
 
 
 album1.stock_level()

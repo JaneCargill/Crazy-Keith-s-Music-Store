@@ -1,5 +1,5 @@
 <h1> Replenish Stock </h1>
-<form action="/albums/<%= @album.id %>" method="post">
+<form action="/albums/<%= @album.id %>/buy" method="post">
 <label>
   Select Artist:
   <select name="artist_id">
@@ -24,7 +24,6 @@ Current Number of Albums: <%=@album.quantity%>
 <label>
 Number of Albums Bought:
   <input type="integer" name="quantity">
-
 </label>
 
 <input type='submit' value="update">

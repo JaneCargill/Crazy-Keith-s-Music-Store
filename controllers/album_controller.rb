@@ -32,9 +32,16 @@ get '/albums/:id/to_buy' do
   erb(:"Albums/to_buy")
 end
 
-post '/albums/:id' do
+post '/albums/:id/buy' do
   album = Album.find(params[:id].to_i)
-  album.quantity += params[:quantity].to_i
+  album.buy_album(params[:quantity].to_i)
+  Album.update({"quantity" => album.quantity, "name" => album.name, "id" => album.id})
+  redirect ('/albums')
+end
+
+post '/albums/:id/sell' do
+  album = Album.find(params[:id].to_i)
+  album.sell_album(params[:quantity].to_i)
   Album.update({"quantity" => album.quantity, "name" => album.name, "id" => album.id})
   redirect ('/albums')
 end
