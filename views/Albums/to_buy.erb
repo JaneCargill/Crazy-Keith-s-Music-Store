@@ -1,0 +1,31 @@
+<h1> Replenish Stock </h1>
+<form action="/albums/<%= @album.id %>" method="post">
+<label>
+  Select Artist:
+  <select name="artist_id">
+    <%for artist in @artists%>
+    <option value="<%=artist.id%>"<%= "selected" if artist.id == @album.artist_id %> >
+    <%=artist.name%>
+    </option>
+    <%end%>
+  </select>
+</label>
+
+<label>
+  Enter Album:
+  <input type="text" name="name" value="<%= @album.name() %>">
+</label>
+
+<label>
+Current Number of Albums: <%=@album.quantity%>
+  
+</label>
+
+<label>
+Number of Albums Bought:
+  <input type="integer" name="quantity">
+
+</label>
+
+<input type='submit' value="update">
+</form>

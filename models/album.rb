@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Album
 
-  attr_accessor :name, :quantity, :artist_id
+  attr_accessor :name, :quantity, :artist_id, :price_id
   attr_reader :id 
 
   def initialize(options)
@@ -10,10 +10,11 @@ class Album
     @quantity = options['quantity'].to_i
     @id = options['id'].to_i
     @artist_id = options['artist_id'].to_i
+    @price_id = options['price_id'].to_i
   end
 
   def save()
-    sql = "INSERT INTO albums (name, quantity, artist_id) VALUES ('#{@name}', #{@quantity}, #{@artist_id}) returning *;"
+    sql = "INSERT INTO albums (name, quantity, artist_id, price_id) VALUES ('#{@name}', #{@quantity}, #{@artist_id}, #{price_id}) returning *;"
     results = SqlRunner.run(sql)
     @id = results[0]['id'].to_i
   end
@@ -32,14 +33,21 @@ class Album
   end
 
   def find_artist()
-    sql = "SELECT * FROM artists WHERE id = #{@artist_id}"
+    sql = "SELECT * FROM artists WHERE id = #{@artist_id};"
     artists = SqlRunner.run(sql)
     result = artists.map {|hash| Album.new(hash)}
     return result[0]
   end
 
+  def find_prices
+    sql = "SELECT * FROM prices WHERE id = #{price_id};"
+    prices = SqlRunner.run(sql)
+    result = prices.map {|hash| Price.new(hash)}
+    return result[0]
+  end
+
   def self.find(id)
-    sql="SELECT* FROM albums WHERE id = #{id}"
+    sql="SELECT* FROM albums WHERE id = #{id};"
     data = SqlRunner.run(sql).first
     return Album.new(data)
   end

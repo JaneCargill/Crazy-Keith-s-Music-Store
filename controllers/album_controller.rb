@@ -2,10 +2,11 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative('../models/album')
 require_relative('../models/artist')
+require_relative('../models/price')
 
 get '/albums' do
   @albums = Album.all()
-erb(:"Albums/show")
+erb(:"Albums/index")
 end
 
 get '/albums/new' do
@@ -25,7 +26,20 @@ get '/albums/:id/edit' do
   erb(:"Albums/edit")
 end
 
+get '/albums/:id/to_buy' do
+  @album = Album.find(params[:id])
+  @artists = Artist.all()
+  erb(:"Albums/to_buy")
+end
+
 post '/albums/:id' do
-  @album = Album.update(params)
+  album = Album.find(params[:id].to_i)
+  album.quantity += params[:quantity].to_i
+  Album.update({"quantity" => album.quantity, "name" => album.name, "id" => album.id})
   redirect ('/albums')
+end
+
+get '/albums/:id' do
+  @album = Album.find(params[:id])
+erb(:"Albums/show")
 end
