@@ -1,4 +1,5 @@
 <h1>CK Music Store</h1>
+<hr class="style1">
 
 <table>
   <tr>
@@ -11,13 +12,13 @@
   </tr>
   <% for album in @albums %>
   <tr>
-    <td><a href="/albums/<%= album.id %>"><%= album.name() %></a></td>
+    <td class="td1"><a href="/albums/<%= album.id %>"><%= album.name() %></a></td>
 
-    <td><a href="/artists/<%= album.artist_id %>"> <%= album.find_artist.name() %></a></td>
+    <td class="td1"><a href="/artists/<%= album.artist_id %>"> <%= album.find_artist.name() %></a></td>
     
-    <td><%= album.stock_level() %></td>
+    <td class="td1"><%= album.stock_level() %></td>
     
-    <!-- <p><a href="/albums/<%=album.id %>">Show</a></p> -->
+    
   </tr>
   <% end %>
 </table>

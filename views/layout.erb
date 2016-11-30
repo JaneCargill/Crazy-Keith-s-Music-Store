@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CK Music Store!</title> -->
+  <title>CK Music Store!</title>
 
-  <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet"> -->
+  <link rel="icon" href="/images/headphons.png" />
 
-  <!-- <link rel="icon" href="" /> -->
-
-  
-  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
-  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
+  <link rel="stylesheet" type="text/css" href="/styles/table.css">
 
   <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
 
@@ -21,17 +17,17 @@
   <nav>
     <ul>
       <li>
-        <a href="/albums">Albums</a>
+        <a style="color: darkslategray" href="/stock_level">Home</a>
       </li>
       <li>
-        <a href="/stock_level">Home</a>
+        <a style="color: darkslategray" href="/albums">Albums</a>
       </li>
       <li>
-        <a href="/artists">Artists</a>
+        <a style="color: darkslategray" href="/artists">Artists</a>
       </li>
     </ul>
   </nav>
-  <section id="content">
+  <section>
   <%= yield %> 
   </section>
   </main>

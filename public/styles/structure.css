@@ -1,18 +1,30 @@
 
 
 body {
-  background-color: lightsteelblue; 
-  background-image: url('/images/music_is_lifel2fdetail.png');
-  background-size: cover;
+  background-color: black; 
+  background-image: url(/images/headphones.png);
   background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 35%;
+  background-attachment: fixed;
   color: papayawhip;
   font-family: 'Verdana', sans-serif;
   padding: 0px;
   margin: 0px;
 }
 
+hr.style1 {
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px white;
+}
+hr.style1:after {  /* Not really supposed to work, but does */
+    content: "\00a0";  /* Prevent margin collapse */
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Verdana', sans-serif;
+  color: pink;
   margin: 0px;
   padding: 0px;
 }
@@ -23,14 +35,24 @@ h1 {
   margin-bottom: 30px;
 }
 
+a, a:unvisited {
+  color: papayawhip;
+  text-decoration: none;
+}
+
 a, a:visited {
   color: papayawhip;
   text-decoration: none;
 }
 
+a, a:hover {
+  color: darkslategray;
+  text-decoration: none;
+}
+
 ul {
   padding: 0px;
-  margin: 0px;
+  margin-top: 90px;
   list-style-type: none;
 }
 
@@ -46,11 +68,6 @@ main {
   flex-direction: row;
 }
 
-#content {
-  border-left: 1px solid darkred;
-  padding-left: 25px;
-}
-
 nav {
   padding: 0px;
   margin: 0px;
@@ -58,6 +75,6 @@ nav {
 }
 
 nav ul li {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   text-transform: uppercase;
 }
