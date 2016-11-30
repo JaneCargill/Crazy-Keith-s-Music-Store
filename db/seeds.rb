@@ -8,22 +8,64 @@ Price.delete_all()
 Artist.delete_all()
 
 artist1 = Artist.new({
-  'name' => 'The Killers'
+  'name' => 'Oasis'
   });
 
   artist1.save()
 
 artist2 = Artist.new({
-  'name' => 'The Kooks'
+  'name' => 'Simply Red'
   });
 
 artist2.save()
 
 artist3 = Artist.new({
-  'name' => 'Kasabian'
+  'name' => 'Spice Girls'
   });
 
 artist3.save()
+
+artist4 = Artist.new({
+  'name' => 'The Corrs'
+  });
+
+artist4.save()
+
+artist5 = Artist.new({
+  'name' => 'Alanis Morissette'
+  });
+
+artist5.save()
+
+artist6 = Artist.new({
+  'name' => 'Robson Green & Jerome Flynn'
+  });
+
+artist6.save()
+
+artist7 = Artist.new({
+  'name' => 'Madonna'
+  });
+
+artist7.save()
+
+artist8 = Artist.new({
+  'name' => 'The Verve'
+  });
+
+artist8.save()
+
+artist9 = Artist.new({
+  'name' => 'Abba'
+  });
+
+artist9.save()
+
+artist10 = Artist.new({
+  'name' => 'Celine Dione'
+  });
+
+artist10.save()
 
 price1 = Price.new({
   'price_sell' => 10,
@@ -50,17 +92,17 @@ price4 = Price.new({
 price4.save
 
 album1 = Album.new({
-  'name' => 'Inside In/Inside Out',
+  'name' => 'Morning Glory',
   'quantity' => 4,
-  'artist_id' => artist2.id,
+  'artist_id' => artist1.id,
   'price_id' => price1.id
   });
 
 album1.save()
 
 album2 = Album.new({
- 'name' => 'Listen',
- 'quantity' => 3,
+ 'name' => 'Stars',
+ 'quantity' => 24,
  'artist_id' => artist2.id,
  'price_id' => price4.id
   });
@@ -68,40 +110,130 @@ album2 = Album.new({
 album2.save()
 
 album3 = Album.new({
- 'name' => 'Too Much is Not Enough',
- 'quantity' => 8,
- 'artist_id' => artist2.id,
+ 'name' => 'Spice',
+ 'quantity' => 33,
+ 'artist_id' => artist3.id,
  'price_id' => price1.id
   });
 
 album3.save()
 
 album4 = Album.new({
- 'name' => 'Hot Fuss',
- 'quantity' => 15,
- 'artist_id' => artist1.id,
+ 'name' => 'Talk on Corners',
+ 'quantity' => 49,
+ 'artist_id' => artist4.id,
  'price_id' => price2.id
   });
 
 album4.save()
 
 album5 = Album.new({
- 'name' => 'Sams Town',
- 'quantity' => 30,
- 'artist_id' => artist1.id,
+ 'name' => 'Jagged Little Pill',
+ 'quantity' => 10,
+ 'artist_id' => artist5.id,
  'price_id' => price3.id
   });
 
 album5.save
 
 album6 = Album.new({
-  'name' => 'Empire',
-  'quantity' => 17,
-  'artist_id' => artist3.id,
+  'name' => 'Robson & Jerome',
+  'quantity' => 2,
+  'artist_id' => artist6.id,
   'price_id' => price4.id
   });
 
 album6.save
+
+album7 = Album.new({
+  'name' => 'The Immaculate Collection',
+  'quantity' => 28,
+  'artist_id' => artist7.id,
+  'price_id' => price4.id
+  });
+
+album7.save
+
+album8 = Album.new({
+  'name' => 'Urban Hymns',
+  'quantity' => 19,
+  'artist_id' => artist8.id,
+  'price_id' => price3.id
+  });
+
+album8.save
+
+album9 = Album.new({
+  'name' => 'Gold, Greatest Hits',
+  'quantity' => 9,
+  'artist_id' => artist9.id,
+  'price_id' => price2.id
+  });
+
+album9.save
+
+album10 = Album.new({
+  'name' => 'Falling Into You',
+  'quantity' => 6,
+  'artist_id' => artist10.id,
+  'price_id' => price1.id
+  });
+
+album10.save
+
+album11 = Album.new({
+  'name' => 'Arrival',
+  'quantity' => 31,
+  'artist_id' => artist9.id,
+  'price_id' => price3.id
+  });
+
+album11.save
+
+album12 = Album.new({
+  'name' => 'ABBA Greatest Hits',
+  'quantity' => 17,
+  'artist_id' => artist9.id,
+  'price_id' => price2.id
+  });
+
+album12.save
+
+album13 = Album.new({
+  'name' => 'Burning Up',
+  'quantity' => 22,
+  'artist_id' => artist7.id,
+  'price_id' => price4.id
+  });
+
+album13.save
+
+album14 = Album.new({
+  'name' => 'Lucky Star',
+  'quantity' => 45,
+  'artist_id' => artist7.id,
+  'price_id' => price1.id
+  });
+
+album14.save
+
+album15 = Album.new({
+  'name' => 'Forever',
+  'quantity' => 36,
+  'artist_id' => artist3.id,
+  'price_id' => price3.id
+  });
+
+album15.save
+
+album16 = Album.new({
+  'name' => 'Spiceworld',
+  'quantity' => 50,
+  'artist_id' => artist3.id,
+  'price_id' => price4.id
+  });
+
+album16.save
 
 album6.quantity = 20
 
