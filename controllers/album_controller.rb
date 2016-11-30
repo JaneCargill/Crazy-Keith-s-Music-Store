@@ -21,10 +21,10 @@ post '/albums' do
   redirect ('/albums')
 end
 
-get '/albums/:id/edit' do
+get '/albums/:id/to_sell' do
   @album = Album.find(params[:id])
   @artists = Artist.all()
-  erb(:"Albums/edit")
+  erb(:"Albums/to_sell")
 end
 
 get '/albums/:id/to_buy' do
@@ -32,6 +32,19 @@ get '/albums/:id/to_buy' do
   @artists = Artist.all()
   erb(:"Albums/to_buy")
 end
+
+get '/albums/:id/edit' do
+  @album = Album.find(params[:id])
+  @artists = Artist.all()
+  erb(:"Albums/edit")
+end
+
+post '/albums/:id/edit' do
+  album = Album.find(params[:id].to_i)
+  Album.update({"quantity" => album.quantity, "name" => album.name, "id" => album.id, "profit" => album.profit})
+  redirect ('/albums')
+end
+
 
 post '/albums/:id/buy' do
   album = Album.find(params[:id].to_i)

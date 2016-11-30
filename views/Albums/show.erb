@@ -1,32 +1,19 @@
 <h1> Album </h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th>Quantity</th>
-    <th></th>
-    <th>Artist</th>
-    <th></th>
-    <th>Price to Buy</th>
-    <th></th>
-    <th>Price to Sell</th>
-  </tr>
 
-  <tr>
-    <td><%=@album.name%><td>
-      <td></td>
-      <td><%=@album.quantity%><td>
-        <td></td>
-        <td><%=@album.find_artist.name%><td>
-          <td></td> 
-          <td><%= @album.find_prices.price_buy %><td>
-            <td></td>
-            <td><%=@album.find_prices.price_sell%><td>
-              <td></td>
-            </tr>
+    <h2><%=@album.name%></h2>
+        <tr></tr>
+        <p>By <%=@album.find_artist.name%></p>
+          <tr></tr> 
+          <p><%=@album.quantity%> albums in stock</p>
+          <tr></tr>
+          <p>Price to Buy: £<%= @album.find_prices.price_buy %></p>
+            <tr></tr>
+            <p>Price to Sell: £<%=@album.find_prices.price_sell%></p>
+              <tr></tr>
+            
 
-          </table>
-        <p><a href="/albums/<%=@album.id%>/to_buy">Replenish Stock</a></p>
+      
+        <p><a class="btn btn--stock" href="/albums/<%=@album.id%>/to_buy">Replenish Stock</a></p>  
 
-        <p><a href="/albums/<%=@album.id%>/edit">Sell Album</a></p>
+        <p><a class="btn btn--stock" href="/albums/<%=@album.id%>/to_sell">Sell Album</a></p>

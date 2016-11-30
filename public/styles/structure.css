@@ -1,0 +1,63 @@
+
+
+body {
+  background-color: lightsteelblue; 
+  background-image: url('/images/music_is_lifel2fdetail.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: papayawhip;
+  font-family: 'Verdana', sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Verdana', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-size: 1.8em;
+  color: darkslategray;
+  margin-bottom: 30px;
+}
+
+a, a:visited {
+  color: papayawhip;
+  text-decoration: none;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+main {
+  padding: 25px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--row {
+  flex-direction: row;
+}
+
+#content {
+  border-left: 1px solid darkred;
+  padding-left: 25px;
+}
+
+nav {
+  padding: 0px;
+  margin: 0px;
+  padding-right: 25px;
+}
+
+nav ul li {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
