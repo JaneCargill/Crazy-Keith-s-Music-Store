@@ -12,6 +12,7 @@ end
 
 get '/albums/new' do
   @artists = Artist.all()
+  @prices = Price.all()
 erb(:"Albums/new")
 end
 
